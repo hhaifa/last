@@ -53,50 +53,7 @@ Router.delete("/mailings/:id", (req, res) => {
     }
   });
 });
-// Router.put("/movies/:id", (req, res) => {
-//   Movie.findOne({ _id: req.params.id }).exec((err, movie) => {
-//     if (movie) {
-//       Joi.validate(req.body, MovieValidation, (err, value) => {
-//         if(err){
-//           res.boom.badData("Invalid data", err);
-//         } else {
-//           const update = value;
-//           Movie.findByIdAndUpdate(
-//             req.params.id,
-//             { $set: update },
-//             { new: true },
-//             (err, updatedMovie) => {
-//               if (err) {
-//                 res.boom.badImplementation("Error occured while updating movie");
-//               } else {
-//                 res.json(updatedMovie);
-//               }
-//             }
-//           );
-//         }
-//       });
-//     } else {
-//       res.boom.notFound("Unable to find movie");
-//     }
-//   });
-// });
 
-// Router.get("/movies/:id", (req, res) => {
-//   Movie.findOne({ _id: req.params.id })
-//     .populate("actors")
-//     .exec((err, movie) => {
-//       if (err) {
-//         console.error(err);
-//         res.boom.badImplementation("Unable to find movie");
-//       } else {
-//         if (movie) {
-//           res.json(movie);
-//         } else {
-//           res.boom.notFound("Unable to find movie");
-//         }
-//       }
-//     });
-// });
 
 
 
