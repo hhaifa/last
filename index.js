@@ -18,8 +18,7 @@ app.use(function(req, res, next) {
 });
 
 //controllers
-const actors =require('./app/controllers/actors')
-const movies =require('./app/controllers/movies')
+
 const pays =require('./app/controllers/pays')
 const spes =require('./app/controllers/spes')
 const docs =require('./app/controllers/docs')
@@ -29,8 +28,7 @@ const preinscritdocs =require('./app/controllers/preinscritdocs')
  app.use(bodyParser.json());
 app.use(boom());
 app.use(morgan('dev'));
-app.use('/api/v1/', movies);
-app.use('/api/v1/', actors);
+
 app.use('/api/v1/', pays);
 app.use('/api/v1/', spes);
 app.use('/api/v1/', docs);
