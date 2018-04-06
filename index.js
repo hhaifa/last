@@ -10,7 +10,7 @@ const boom= require('express-boom');
 
 
 //controllers
-const spes = require('./app/controllers/spes');
+const spes = require('./App/controllers/spes');
 const pays = require('./app/controllers/pays');
 const docs = require('./app/controllers/docs');
 const mailings = require('./app/controllers/mailings');
