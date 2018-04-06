@@ -1,7 +1,7 @@
 {
-  "name": "server",
+  "name": "last",
   "version": "1.0.0",
-  "description": "",
+  "description": "The Metaverse virtual reality. The final outcome of all virtual worlds, augmented reality, and the Internet.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -24,6 +24,10 @@
   },
   "devDependencies": {
     "nodemon": "^1.17.1"
+  }
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/hhaifa/last.git"
   }
 }
 
