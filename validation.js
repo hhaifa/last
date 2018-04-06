@@ -7,11 +7,6 @@ const Pay = Joi.object().keys({
  
 });
 
-const Pay = Joi.object().keys({
-    _id: Joi.string(),
-    Name: Joi.string().required(),
- 
-});
 
 const Doc = Joi.object().keys({
    _id: Joi.string(),
