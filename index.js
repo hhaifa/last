@@ -18,11 +18,11 @@ app.use(function(req, res, next) {
 });
 
 //controllers
-const spes =require('./app/controllers/spes')
-const pays =require('./app/controllers/pays')
-const docs =require('./app/controllers/docs')
-const mailings =require('./app/controllers/mailings')
-const preinscritdocs =require('./app/controllers/preinscritdocs')
+const spes =require('./app/controllers/spes');
+const pays =require('./app/controllers/pays');
+const docs =require('./app/controllers/docs');
+const mailings =require('./app/controllers/mailings');
+const preinscritdocs =require('./app/controllers/preinscritdocs');
 
  app.use(bodyParser.json());
 app.use(boom());
