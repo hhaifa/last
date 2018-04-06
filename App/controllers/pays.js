@@ -1,5 +1,7 @@
 const Router = require('express').Router();
 const Pay = require('../models/Pay').model;
+const Joi = require('joi');
+const PayValidation = require('../../validation').Pay;
 
 Router.get('/pays', (req, res) => {
     Pay.find({})
