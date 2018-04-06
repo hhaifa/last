@@ -1,7 +1,7 @@
 {
   "name": "last",
   "version": "1.0.0",
-  "description": "The Metaverse virtual reality. The final outcome of all virtual worlds, augmented reality, and the Internet."
+  "description": "The Metaverse virtual reality. The final outcome of all virtual worlds, augmented reality, and the Internet.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
