@@ -8,6 +8,10 @@
     "dev": "nodemon index.js",
     "start": "node index.js"
   },
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/hhaifa/last.git"
+},
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -25,9 +29,6 @@
   "devDependencies": {
     "nodemon": "^1.17.1"
   }
-  "repository": {
-      "type": "git",
-      "url": "https://github.com/hhaifa/last.git"
-  }
+ 
 }
 
