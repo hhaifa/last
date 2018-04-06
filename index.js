@@ -18,9 +18,8 @@ app.use(function(req, res, next) {
 });
 
 //controllers
-
-const pays =require('./app/controllers/pays')
 const spes =require('./app/controllers/spes')
+const pays =require('./app/controllers/pays')
 const docs =require('./app/controllers/docs')
 const mailings =require('./app/controllers/mailings')
 const preinscritdocs =require('./app/controllers/preinscritdocs')
