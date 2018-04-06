@@ -1,5 +1,5 @@
 {
-  "name": "server",
+  "name": "last",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,22 +11,24 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/hhaifa/last.git"
-},
+  },
+  
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "dotenv": "^5.0.0",
+    "express": "^4.16.2",
+    "express-boom": "^2.0.0",
+    "joi": "^13.1.2",
+    "mongodb": "^2.2.31",
+    "mongoose": "^5.0.7",
+    "morgan": "^1.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.15.1"
+  }
+}
 
-"author": "",
-"license": "ISC",
-"dependencies": {
-  "body-parser": "^1.18.2",
-  "cors": "^2.8.4",
-  "dotenv": "^5.0.0",
-  "express": "^4.16.2",
-  "express-boom": "^2.0.0",
-  "joi": "^13.1.2",
-  "mongodb": "^2.2.31",
-  "mongoose": "^5.0.7",
-  "morgan": "^1.9.0"
-},
-"devDependencies": {
-  "nodemon": "^1.15.1"
-}
-}
+

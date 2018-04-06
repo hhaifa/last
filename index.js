@@ -10,7 +10,7 @@ const morgan= require('morgan');
 const boom= require('express-boom');
 
 app.use(function(req, res, next) {
-  res.setHeader("Access-Control-Allow-Origin", 'http://localhost:4200');
+  res.setHeader("Access-Control-Allow-Origin", '*');
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.setHeader("Access-Control-Allow-Origin-Credentials",true);
@@ -32,19 +32,17 @@ app.use(morgan('dev'));
 app.use('/api/v1/', pays);
 app.use('/api/v1/', spes);
 app.use('/api/v1/', docs);
-app.use('/api/v1/', preinscritdocs);
 app.use('/api/v1/', mailings);
+app.use('/api/v1/', preinscritdocs);
+
 app.use(cors());
 mongo.check();
 //new ligne
 app.use('/', express.static('public'));
-// app.get ('/',(req,res)=>{
-  // res.end('HELLO ARSII ');
-// })
 app.listen(process.env.APP_PORT,(err)=>{
   if(err){
     console.error(err);
   }else{
-     console.log("MOVIES IS UP 2018!");
+     console.log("AlloDocteur IS UP 2018!");
   }
 });

@@ -1,6 +1,11 @@
 const Joi = require('joi');
 
 
+const Pay = Joi.object().keys({
+    _id: Joi.string(),
+    Name: Joi.string().required(),
+ 
+});
 
 const Pay = Joi.object().keys({
     _id: Joi.string(),
@@ -50,4 +55,4 @@ const Preinscritdoc = Joi.object().keys({
     // spes: Joi.array().items(Joi.any())
 });
 
-module.exports = {Mailing,Preinscritdoc,Doc};
+module.exports = {Mailing,Preinscritdoc,Doc,Pay};
