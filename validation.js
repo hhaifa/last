@@ -1,6 +1,11 @@
 const Joi = require('joi');
 
 
+const Pay = Joi.object().keys({
+    _id: Joi.string(),
+    Name: Joi.string().required(),
+ 
+});
 
 
 
