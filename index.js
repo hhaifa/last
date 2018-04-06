@@ -11,10 +11,10 @@ const boom= require('express-boom');
 
 //controllers
 const spes = require('./App/controllers/spes');
-const pays = require('./app/controllers/pays');
-const docs = require('./app/controllers/docs');
-const mailings = require('./app/controllers/mailings');
-const preinscritdocs = require('./app/controllers/preinscritdocs');
+const pays = require('./App/controllers/pays');
+const docs = require('./App/controllers/docs');
+const mailings = require('./App/controllers/mailings');
+const preinscritdocs = require('./App/controllers/preinscritdocs');
 /**
  * Providers
  */
