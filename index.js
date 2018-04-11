@@ -15,7 +15,10 @@ const pays = require('./App/controllers/pays');
 const docs = require('./App/controllers/docs');
 const mailings = require('./App/controllers/mailings');
 const preinscritdocs = require('./App/controllers/preinscritdocs');
+<<<<<<< HEAD
 const logins = require('./App/controllers/logins');
+=======
+>>>>>>> 4c3747f71740a4fe0a0b3dfcd12b8aa851aac23d
 /**
  * Providers
  */
@@ -42,6 +45,10 @@ app.use('/api/v1/', mailings);
 app.use('/api/v1/', preinscritdocs);
 app.use('/api/v1/', logins);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4c3747f71740a4fe0a0b3dfcd12b8aa851aac23d
 mongo.check();
 //new ligne
 app.use('/', express.static('public'));
