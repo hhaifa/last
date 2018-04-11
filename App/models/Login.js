@@ -1,7 +1,11 @@
 const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema({
-    Place: {
+    username: {
+        type: String,
+        required: true
+    },
+    pasword: {
         type: String,
         required: true
     },
@@ -10,6 +14,6 @@ const schema = new mongoose.Schema({
         versionKey: false
     });
 
-const model = mongoose.model('pay', schema);
+const model = mongoose.model('login', schema);
 
 module.exports = { schema, model };

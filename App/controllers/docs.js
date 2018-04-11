@@ -17,10 +17,11 @@ Router.get("/docs", (req, res) => {
   });
 });
 
-Router.get("/docs/:Typesp/:Place", (req, res) => {
+Router.get("/docs/:spes/:Place", (req, res) => {
     Doc.find({ 
-      'pays.Place': req.params.Place,
-      'spes.Typesp':req.params.Typesp
+      'Place': req.params.Place,
+      'spes': req.params.spes,
+      // 'spes':req.params.Typesp
        })
       .populate("docs")
       .exec((err, doc) => {
@@ -52,7 +53,7 @@ Router.put("/docs/:id", (req, res) => {
             { new: true },
             (err, updatedDoc) => {
               if (err) {
-                res.boom.badImplementation("Error occured while updating movie");
+                res.boom.badImplementation("Error occured while updating doctor");
               } else {
                 res.json(updatedDoc);
               }
@@ -61,7 +62,7 @@ Router.put("/docs/:id", (req, res) => {
         }
       });
     } else {
-      res.boom.notFound("Unable to find movie");
+      res.boom.notFound("Unable to find doctor");
     }
   });
 });
@@ -70,7 +71,7 @@ Router.post("/docs", (req, res) => {
         if(err){
           res.boom.badData("Invalid data", err);
         } else {
-          let neDoc = new Doc(req.body);
+          let newDoc = new Doc(req.body);
           newDoc.save(err => {
           if (err) {
             console.error(err);
@@ -89,18 +90,18 @@ Router.delete("/docs/:id", (req, res) => {
   Doc.findOne({ _id: req.params.id }).exec((err, doc) => {
     if (doc) {
       if (err) {
-        res.boom.badImplementation("Error occured while retreiving movie");
+        res.boom.badImplementation("Error occured while retreiving doc");
       } else {
         Doc.remove({ _id: req.params.id }, err => {
           if (err) {
-            res.boom.badImplementation("Error occured while deleting movie");
+            res.boom.badImplementation("Error occured while deleting doc");
           } else {
-            res.json("Movie deleted successfully");
+            res.json("Doc deleted successfully");
           }
         });
       }
     } else {
-      res.boom.notFound("Unable to find movie");
+      res.boom.notFound("Unable to find Doc");
     }
   });
 });

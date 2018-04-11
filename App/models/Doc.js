@@ -1,67 +1,41 @@
 const mongoose = require('mongoose');
-const Actor = require('./Doc').schema;
+const Pay = require('./Pay').schema;
+const Spe = require('./Spe').schema;
 const schema = new mongoose.Schema({
-    nomfam: {
+    Nom_prenom: {
         type: String,
         required: true
     },
-    prenom: {
+   adresse: {
         type: String,
         required: false
     },
-   
-    // ville: {
-    //     type: String,
-    //     required: true
-    // },
-    adresse: {
-        type: String,
-        required: false
-    },
-    mobile: {
-        type: Date,
-        required: false
-    },
-    tele_fix: {
-        type: String,
-        required: true
-    },
-    fax: {
-        type: String,
-        required: false
-    },
-    E_mail: {
-        type: Date,
-        required: false
-    },
-    //cv : {
-    //     type: String,
-    //     required: true
-    // },
-    commente: {
-        type: String,
-        required: false
-    },
- // gouvernorat
-
-pays: [{
     
-    type: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'pay'
-    }
-}],
-spes: [{
-   type: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'spe'
-    }
-}]
-},
+  
+    tele: {
+        type: String,
+        required: true
+    },
+    
+    E_mail: {
+        type: String,
+        required: false
+    },
+    Place : {
+        type: String,
+        required: false
+    },
+    spes:  {
+        type: String,
+        required: false
+    },
+  
 
- {
-versionKey: false
+}, {
+    versionKey: false
 });
+   
+
 const model = mongoose.model('doc', schema);
 
 module.exports = {schema, model};

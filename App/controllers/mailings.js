@@ -9,7 +9,7 @@ Router.get("/mailings", (req, res) => {
   .exec((err, result) => {
     if (err) {
       console.error(err);
-      res.boom.badImplementation("Unable to find movies");
+      res.boom.badImplementation("Unable to find E_maile");
     } else {
       console.log(JSON.stringify(result));
       res.json(result);
@@ -26,9 +26,9 @@ Router.post("/mailings", (req, res) => {
       newMailings.save(err => {
       if (err) {
         console.error(err);
-        res.boom.badImplementation("Cannot save movie");
+        res.boom.badImplementation("Cannot save  E_maile");
       } else {
-        res.status(201).json("Movie saved successfully");
+        res.status(201).json(" E_maile saved successfully");
       }
   });
     }
@@ -49,7 +49,7 @@ Router.delete("/mailings/:id", (req, res) => {
         });
       }
     } else {
-      res.boom.notFound("Unable to find movie");
+      res.boom.notFound("Unable to find  E_maile");
     }
   });
 });
