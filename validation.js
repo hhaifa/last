@@ -28,9 +28,9 @@ const Mailing = Joi.object().keys({
 
 const Preinscritdoc = Joi.object().keys({
     _id: Joi.string(),
-     nomfam: Joi.string().required().min(4),
+    nomfam: Joi.string().required().min(4),
     tunisie:Joi.string(),
-    adresse:Joi.string().required().min(5),
+    adresse:Joi.string().required(),
     gov: Joi.string(),
     spesialiste:Joi.string(),
     tele:Joi.number().required().min(8),
