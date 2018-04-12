@@ -15,6 +15,7 @@ const pays = require('./App/controllers/pays');
 const docs = require('./App/controllers/docs');
 const mailings = require('./App/controllers/mailings');
 const preinscritdocs = require('./App/controllers/preinscritdocs');
+
 /**
  * Providers
  */
@@ -39,6 +40,7 @@ app.use('/api/v1/', spes);
 app.use('/api/v1/', docs);
 app.use('/api/v1/', mailings);
 app.use('/api/v1/', preinscritdocs);
+
 
 mongo.check();
 //new ligne
