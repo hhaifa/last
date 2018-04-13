@@ -7,13 +7,17 @@ const Pay = Joi.object().keys({
  
 });
 
-
+const Log = Joi.object().keys({
+    _id: Joi.string(),
+    username: Joi.string().required(),
+    pass: Joi.string().required(),
+});
 const Doc = Joi.object().keys({
    _id: Joi.string(),
    Nom_prenom: Joi.string().required().min(4),
-   adresse:Joi.string().required().min(5),
-   tele:Joi.number(),
-   E_mail:Joi.string(),
+   adresse:Joi.string().required(),
+   tele:Joi.string().allow(''),
+   E_mail:Joi.string().allow(''),
    Place:Joi.string(),
    spes:Joi.string(),
 
@@ -23,7 +27,7 @@ const Mailing = Joi.object().keys({
     _id: Joi.string(),
     name: Joi.string().required(),
     email: Joi.string().required(),
-    sujet: Joi.string()
+    sujet:Joi.string().required(),
 });
 
 const Preinscritdoc = Joi.object().keys({
@@ -33,9 +37,9 @@ const Preinscritdoc = Joi.object().keys({
     adresse:Joi.string().required(),
     gov: Joi.string(),
     spesialiste:Joi.string(),
-    tele:Joi.number().required().min(8),
-    E_mail:Joi.string().required().min(8),
-    commente:Joi,
+    tele:Joi.string().required(),
+    E_mail:Joi.string().allow(''),
+    commente:Joi.string().allow('')
 });
 
-module.exports = {Mailing,Preinscritdoc,Doc,Pay};
+module.exports = {Mailing,Preinscritdoc,Doc,Pay,Log};

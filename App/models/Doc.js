@@ -14,7 +14,7 @@ const schema = new mongoose.Schema({
   
     tele: {
         type: String,
-        required: true
+        required: false
     },
     
     E_mail: {
