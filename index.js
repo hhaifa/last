@@ -1,7 +1,5 @@
 require('dotenv').config();
-
 const express = require('express');
-
 const cors =require('cors');
 const  bodyParser =require('body-parser');
 const morgan= require('morgan');
@@ -46,7 +44,7 @@ app.use('/api/v1/', logs);
 
 mongo.check();
 //new ligne
-app.use('/', express.static('public/index.html'));
+app.use('/', express.static('public'));
 app.listen(process.env.APP_PORT,(err)=>{
   if(err){
     console.error(err);
