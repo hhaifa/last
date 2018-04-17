@@ -41,10 +41,12 @@ app.use('/api/v1/', docs);
 app.use('/api/v1/', mailings);
 app.use('/api/v1/', preinscritdocs);
 app.use('/api/v1/', logs);
+ 
+
 
 mongo.check();
 //new ligne
-app.use('/', express.static('public'));
+app.use('/', express.static('public/index.html'));
 app.listen(process.env.APP_PORT,(err)=>{
   if(err){
     console.error(err);

@@ -1,6 +1,7 @@
 const Router = require('express').Router();
 const Spe = require('../models/Spe').model;
-
+const Joi = require('joi');
+const SpeValidation = require('../../validation').Spe;
 Router.get('/spes', (req, res) => {
     Spe.find({})
         .exec((err, spes) => {
@@ -26,6 +27,22 @@ Router.get('/spes/:id', (req, res) => {
             }
         });
 });
-
+Router.post("/spes", (req, res) => {
+    Joi.validate(req.body, SpeValidation, (err, value) => {
+        if(err){
+          res.boom.badData("Invalid data", err);
+        } else {
+          let newSpe = new Spe(req.body);
+          newSpe.save(err => {
+          if (err) {
+            console.error(err);
+            res.boom.badImplementation("Cannot save Spécialitée");
+          } else {
+            res.status(201).json("Spés saved successfully");
+          }
+      });
+        }
+      });
+    });
 
 module.exports = Router;

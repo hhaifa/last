@@ -17,6 +17,10 @@ const schema = new mongoose.Schema({
         type: String,
         required: false
     },
+    ville: {
+        type: String,
+        required: false
+    },
     spesialiste: {
         type: String,
         required: false

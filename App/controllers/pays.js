@@ -13,21 +13,24 @@ Router.get('/pays', (req, res) => {
             }
         });
 });
+Router.post("/pays", (req, res) => {
+    Joi.validate(req.body, PayValidation, (err, value) => {
+        if(err){
+          res.boom.badData("Invalid data", err);
+        } else {
+          let newPay = new Pay(req.body);
+          newPay.save(err => {
+          if (err) {
+            console.error(err);
+            res.boom.badImplementation("Cannot save Doc");
+          } else {
+            res.status(201).json("Gov/ville saved successfully");
+          }
+      });
+        }
+      });
+    });
 
-Router.get('/pays/:id', (req, res) => {
-    Pay.findOne({ _id: req.params.id })
-        .exec((err, pay) => {
-            if (pay) {
-                if (err) {
-                    res.boom.badImplementation('Error occured while retreiving country');
-                } else {
-                    res.json(pay);
-                }
-            } else {
-                res.boom.notFound('Unable to find country');
-            }
-        });
-});
 
 
 module.exports = Router;

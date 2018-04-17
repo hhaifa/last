@@ -38,6 +38,7 @@ Router.get("/docs/:spes/:Place", (req, res) => {
         }
       });
   });
+ 
 
 Router.put("/docs/:id", (req, res) => {
   Doc.findOne({ _id: req.params.id }).exec((err, doc) => {
