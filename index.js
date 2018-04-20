@@ -44,7 +44,7 @@ app.use('/api/v1/', logs);
 
 mongo.check();
 //new ligne
-app.use('/', express.static(__dirname +'public'));
+app.use('/', express.static('public'));
 app.listen(process.env.APP_PORT,(err)=>{
   if(err){
     console.error(err);
