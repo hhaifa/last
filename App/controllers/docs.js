@@ -3,6 +3,20 @@ const Doc = require("../models/Doc").model;
 const Joi = require('joi');
 const DocValidation = require('../../validation').Doc;
 
+Router.get('/docs/:id', (req, res) => {
+  Doc.findOne({ _id: req.params.id })
+      .exec((err, doc) => {
+          if (doc) {
+              if (err) {
+                  res.boom.badImplementation('Error occured while retreiving helth profetionelle');
+              } else {
+                  res.json(doc);
+              }
+          } else {
+              res.boom.notFound('Unable to find helth profetionelle');
+          }
+      });
+});
 Router.get("/docs", (req, res) => {
   Doc.find({})
   .populate("docs")
@@ -21,7 +35,7 @@ Router.get("/docs/:spes/:Place", (req, res) => {
     Doc.find({ 
       'Place': req.params.Place,
       'spes': req.params.spes,
-      // 'spes':req.params.Typesp
+     
        })
       .populate("docs")
       .exec((err, doc) => {
@@ -43,7 +57,7 @@ Router.get("/docs/:spes/:Place", (req, res) => {
 Router.put("/docs/:id", (req, res) => {
   Doc.findOne({ _id: req.params.id }).exec((err, doc) => {
     if (doc) {
-      Joi.validate(req.body, MovieValidation, (err, value) => {
+      Joi.validate(req.body, DocValidation, (err, value) => {
         if(err){
           res.boom.badData("Invalid data", err);
         } else {

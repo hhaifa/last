@@ -35,4 +35,24 @@ Router.post("/preinscritdocs", (req, res) => {
     });
   });
 
+
+  Router.delete("/preinscritdocs/:id", (req, res) => {
+    Preinscritdoc.findOne({ _id: req.params.id }).exec((err, preinscritdoc) => {
+      if (preinscritdoc) {
+        if (err) {
+          res.boom.badImplementation("Error occured while retreiving doc");
+        } else {
+          Preinscritdoc.remove({ _id: req.params.id }, err => {
+            if (err) {
+              res.boom.badImplementation("Error occured while deleting doc");
+            } else {
+              res.json("Doc deleted successfully");
+            }
+          });
+        }
+      } else {
+        res.boom.notFound("Unable to find Doc");
+      }
+    });
+  });
 module.exports = Router;

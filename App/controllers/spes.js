@@ -2,6 +2,7 @@ const Router = require('express').Router();
 const Spe = require('../models/Spe').model;
 const Joi = require('joi');
 const SpeValidation = require('../../validation').Spe;
+
 Router.get('/spes', (req, res) => {
     Spe.find({})
         .exec((err, spes) => {
@@ -27,6 +28,27 @@ Router.get('/spes/:id', (req, res) => {
             }
         });
 });
+
+Router.delete("/spes/:id", (req, res) => {
+    Spe.findOne({ _id: req.params.id }).exec((err, spe) => {
+      if (spe) {
+        if (err) {
+          res.boom.badImplementation("Error occured while retreiving doc");
+        } else {
+        Spe.remove({ _id: req.params.id }, err => {
+            if (err) {
+              res.boom.badImplementation("Error occured while deleting it!");
+            } else {
+              res.json("delete successfully");
+            }
+          });
+        }
+      } else {
+        res.boom.notFound("Unable to find it!");
+      }
+    });
+  });
+  
 Router.post("/spes", (req, res) => {
     Joi.validate(req.body, SpeValidation, (err, value) => {
         if(err){

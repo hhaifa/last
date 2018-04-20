@@ -3,7 +3,7 @@ const Joi = require('joi');
 
 const Pay = Joi.object().keys({
     _id: Joi.string(),
-    Place: Joi.string().required(),
+    Place: Joi.string(),
  
 });
 const Spe = Joi.object().keys({
@@ -18,8 +18,8 @@ const Log = Joi.object().keys({
 });
 const Doc = Joi.object().keys({
    _id: Joi.string(),
-   Nom_prenom: Joi.string().required().min(4),
-   adresse:Joi.string().required(),
+   Nom_prenom: Joi.string(),
+   adresse:Joi.string(),
    tele:Joi.string().allow(''),
    E_mail:Joi.string().allow(''),
    Place:Joi.string(),
