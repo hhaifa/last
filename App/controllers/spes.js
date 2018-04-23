@@ -66,5 +66,33 @@ Router.post("/spes", (req, res) => {
         }
       });
     });
+    
+Router.put("/spes/:id", (req, res) => {
+  Spe.findOne({ _id: req.params.id }).exec((err, spe) => {
+    if (spe) {
+      Joi.validate(req.body, SpeValidation, (err, value) => {
+        if(err){
+          res.boom.badData("Invalid data", err);
+        } else {
+          const update = value;
+          Spe.findByIdAndUpdate(
+            req.params.id,
+            { $set: update },
+            { new: true },
+            (err, updatedSpe) => {
+              if (err) {
+                res.boom.badImplementation("Error occured while updating doctor");
+              } else {
+                res.json(updatedSpe);
+              }
+            }
+          );
+        }
+      });
+    } else {
+      res.boom.notFound("Unable to find doctor");
+    }
+  });
+});
 
 module.exports = Router;
