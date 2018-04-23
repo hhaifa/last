@@ -17,6 +17,20 @@ Router.get('/docs/:id', (req, res) => {
           }
       });
 });
+Router.get('/doccs/:Nom_prenom', (req, res) => {
+  Doc.findOne({ Nom_prenom: req.params.Nom_prenom })
+      .exec((err, doc) => {
+          if (doc) {
+              if (err) {
+                  res.boom.badImplementation('Error occured while retreiving helth profetionelle');
+              } else {
+                  res.json(doc);
+              }
+          } else {
+              res.boom.notFound('Unable to find helth profetionelle');
+          }
+      });
+});
 Router.get("/docs", (req, res) => {
   Doc.find({})
   .populate("docs")
