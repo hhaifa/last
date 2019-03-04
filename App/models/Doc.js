@@ -1,37 +1,35 @@
 const mongoose = require('mongoose');
-const Pay = require('./Pay').schema;
-const Spe = require('./Spe').schema;
 const schema = new mongoose.Schema({
-    Nom_prenom: {
+    
+    codepct: {
         type: String,
         required: true
     },
-   adresse: {
+    nomed: {
+        type: String,
+        required: true
+    },
+    DCI: {
         type: String,
         required: false
     },
-    
-  
-    tele: {
+   prix: {
         type: String,
         required: false
     },
-    
-    E_mail: {
+    Form: {
         type: String,
         required: false
     },
-    Place : {
+    Form: {
+        type: String,
+        required: false
+    },
+    facon: {
         type: String,
         required: false
     },
    
-    spes:  {
-        type: String,
-        required: false
-    },
-  
-
 }, {
     versionKey: false
 });
